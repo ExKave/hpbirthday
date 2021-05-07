@@ -8,4 +8,4 @@ add ``` ?name=birthday boy name``` to the url to change reciver name.
 
 ## change sender name
 
-Add ``` &sender=sender name``` after birthday boy name to change sender name.
+Add ``` &from=sender name``` after birthday boy name to change sender name.
