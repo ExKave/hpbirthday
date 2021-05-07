@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="A special day for U and Me" />
+<meta property="og:description" content="A gift to my dear. Please click the below link to watch." />
+
+<title>Birthday Wish</title>
+<link rel="stylesheet" href="balloon2.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style type="text/css">
+	*,html{
+		margin:0;
+		padding:0;
+	}
+	
+	body{
+		min-height:100vh;
+		height:100%;
+		background-image:linear-gradient(red, transparent),
+							linear-gradient(to top left, lime, transparent),
+							linear-gradient(to top right, blue, transparent);
+		background-blend-mode: screen;;
+		background-repeat:no-repeat;
+		background-position:fixed;
+		overflow:hidden !important;
+		overflow-wrap:wrap;
+	}
+	
+	
+	.container{
+		position:absolute;
+		height:400px;
+		width:250px;
+		perspective: 1000px;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+		z-index:1;
+	}
+	
+	.container::before{
+	content:'';
+	position:absolute;
+	height:200px;
+	width:200px;
+	border-radius:50%;
+	background: rgb(131,58,180);
+	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(255,84,161,1) 50%, rgba(252,176,69,1) 100%);;
+	transform:translate(-20%,-50%);
+	z-index:-5;
+	}
+	
+	
+	.container::after{
+	content:'';
+	position:absolute;
+	height:200px;
+	width:200px;
+	border-radius:50%;
+	background:rgb(131,58,180);
+	background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(255,84,161,1) 50%, rgba(252,176,69,1) 100%);;
+	transform:translate(50%,-30%) rotateY(180deg);
+	z-index:-1;
+	}
+	
+	
+	
+	.cFront , .cBack{
+		position:absolute;
+		height:400px;
+		width:250px;
+		background:rgba(255,255,255,0.1);
+		-webkit-backface-visibility: hidden;
+		backface-visibility:none;
+		border-radius:5px;
+		backdrop-filter:blur(5px);
+	}
+	
+	.cFront .fullImg{
+		position:absolute;
+		left:0;
+		top:0;
+		height:100%;
+		width:100%;
+		border-radius:5px;
+		pointer-events:none;
+		
+	}
+	
+	.cake{
+		height:100px;
+		width:100px;
+		position:absolute;
+		bottom:0;
+		animation:fadein 2s linear;
+		
+	}
+	
+	img{
+		pointer-events:none;
+	}
+	.cBack{
+		transform:rotateY(180deg);
+		display:flex;
+		align-items:center;
+		padding:3px;
+		font-size:25px;
+		font-weight:500;
+		font-family: 'Lobster', cursive;
+	}
+	
+	.cInner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+		}
+		
+		/* Do an horizontal flip when you move the mouse over the flip box container */
+		.cInner:hover{
+		transform: rotateY(180deg);
+		}
+		
+		
+	.fadein{
+		animation:fadein 2s linear;
+	}
+	
+	@keyframes fadein{
+		from{
+			opacity:0;
+		}
+		
+		to{
+			opacity:1;
+		}
+	}
+	
+	@keyframes fadeout{
+		from{opacity:1;}
+		to{opacity:0;}
+	}
+	
+	.zoomin{
+		display:block;
+	}
+	
+	@keyframes zoomin{
+		0%{
+			opacity:0.1;
+			transform:scale(1.5,1.5);
+		}
+		
+		50%{
+			opacity:0.2;
+		}
+		
+		100%{
+			opacity:1;
+			transform:scale(1,1);
+		}
+	}
+	
+	.speaker {
+		text-align:right;
+	}
+	
+	.btn{
+		position:absolute;
+		bottom:15px;
+		left:50%;
+		transform:translateX(-50%);
+		background:#0066ff;
+		padding:15px 20px;
+		font-size:20px;
+		border-radius:5px;
+		outline:none;
+		z-index:5;
+		border:none;
+		transition-duration: 0.4s;
+	}
+	
+	.btn:hover{
+	border:3px solid #008CBA;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+	
+	.clickHeart{
+		position:absolute;
+		color:yellow;
+		font-size:25px;
+		animation:zoomout 2s linear;
+		z-index:50;
+	}
+	
+	@keyframes zoomout{
+		to{
+			opacity:0;
+			transform:scale(2,2);
+		}
+	}
+</style>
+
+</head>
+<body>
+<audio class="birthSong" src="birthday.mp3" type="audio/mpeg"></audio>
+<div class="container">
+	
+	<div class="cInner" >
+		<div class="cFront">
+			<img src="./images/bdb.jpg" alt="Prarik Khuntia" class="fullImg">
+			<img src="./images/border.png" class="inAnim abcd fullImg" effect="zoomin" delay="1" duration="0.9">
+		</div>
+		<div class="cBack">
+		<div>
+			Today is not just your special day, 
+			it is even mine.
+			 Because today was the day when my best friend came into this world.
+			  If it were not for today, my life wouldn't have been half the fun it is.
+			   I owe so much to you. 
+			    Happy Birthday.
+			    <p class="speaker"></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="abCon">
+</div>
+
+<button class="inAnim abcd btn" effect="fadein" delay="3" duration="0.9"
+ >A Gift 4 U</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+const queryString = window.location.search; 
+const urlParams = new URLSearchParams(queryString); 
+let name=urlParams.get('name');
+let from=urlParams.get('from')
+let colors=['#F7CAC9','yellow','blue','aqua','#c143de','#dbc6a2']
+
+// Birthday Balloons
+if(name===null){
+name="bdFellow";
+}
+let nameArr=name.split('');
+
+// console.log(nameArr)
+
+function flyBalloons(){
+nameArr.forEach((nameChar,index)=>{
+let ballonContainer=document.querySelector('.abCon')
+let color=index%colors.length;
+
+let ballonCode=`
+				<div class="bCon">
+				<div class="balloon"
+				style="--balloonColor:${colors[color]};" 
+				>${nameChar}</div>
+				</div>
+				`
+if(nameChar===" "){
+ballonCode=`
+<div class="bCon">
+				<div class="balloon"
+				style="--balloonColor:${colors[color]};opacity:0;" 
+				></div>
+				</div>
+`
+}
+ballonContainer.insertAdjacentHTML("beforeend",ballonCode)
+})
+}
+
+// From
+
+if(from===null){
+from='Swabhiman'
+}
+
+document.querySelector(".speaker").innerHTML=`-${from}`
+
+
+
+</script>
+
+<script type="text/javascript">
+
+let objs=document.querySelectorAll(".inAnim")
+const body=document.querySelector('body')
+
+objs.forEach((obj)=>{
+	obj.style.display="none"
+	
+	let delay=obj.getAttribute("delay")
+	let duration=obj.getAttribute("duration")
+	let effect=obj.getAttribute("effect")
+	
+	setTimeout(function(){
+	obj.classList.remove("inAnim")
+	obj.classList.add(effect)
+	
+	obj.style=`
+	animation:${effect} ${duration}s linear;
+	`
+	},delay*1000)
+
+})
+
+function song(){
+document.querySelector(".birthSong").play();
+}
+
+
+let bCons=document.querySelectorAll(".bCon")
+
+
+let btn=document.querySelector(".btn")
+btn.addEventListener("click",()=>{
+	
+	song();
+	flyBalloons();
+
+	let cFront=document.querySelector(".cFront")
+	cFront.insertAdjacentHTML("beforeend",`<img class="cake" src=./images/cake.png>`);
+	btn.style=`animation:fadeout 3.4s linear;
+	`
+	
+	setTimeout(function(){
+		btn.remove()
+	},3000)
+
+})
+
+window.addEventListener("click",(e)=>{
+	var coX=e.clientX;
+	var coY=e.clientY;
+	
+	//console.log(coX)
+	
+	let heart=`<i class="fa fa-heart clickHeart" style="left:${coX}px;top:${coY}px"></i>`
+	body.insertAdjacentHTML('afterbegin',heart)
+	
+	
+	var heartTags=document.querySelectorAll(".clickHeart")
+	
+	heartTags.forEach((heartTag)=>{
+	
+	setTimeout(function(){
+		heartTag.remove()
+	},2000)
+	
+	}
+	)
+})
+
+</script>
+</html>
