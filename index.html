@@ -266,7 +266,7 @@
  >A Gift 4 U</button>
 <!-- WhatsApp Share Button -->
 <button id="whatsapp-button">
-    <i class="fab fa-whatsapp"></i> Share on WhatsApp
+    <i class="fab fa-whatsapp"></i>
 </button>
 	
 </body>
@@ -405,7 +405,7 @@ document.getElementById('whatsapp-button').addEventListener('click', function() 
     const encodedMessage = encodeURIComponent(message);
     
     // Construct the WhatsApp share URL
-    const whatsappURL = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+    const whatsappURL = `https://whatsapp://send?text=${encodedMessage}`;
     
     // Open the WhatsApp URL in a new window/tab
     window.open(whatsappURL, '_blank');
