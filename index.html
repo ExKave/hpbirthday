@@ -214,6 +214,29 @@
 			transform:scale(2,2);
 		}
 	}
+
+	#whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the page */
+    right: 20px;  /* Distance from the right of the page */
+    background-color: #25D366; /* WhatsApp green background */
+    color: white; /* Icon color */
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px; /* Icon size */
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+#whatsapp-button:hover {
+    background-color: #128C7E; /* Darker green on hover */
+}
+
+#whatsapp-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+	
 </style>
 
 </head>
@@ -241,7 +264,11 @@
 
 <button class="inAnim abcd btn" effect="fadein" delay="3" duration="0.9"
  >A Gift 4 U</button>
-	      <a href="whatsapp://send?text=Check out this page: {url}" data-action="share/whatsapp/share">Share on WhatsApp</a> 
+<!-- WhatsApp Share Button -->
+<button id="whatsapp-button">
+    <i class="fab fa-whatsapp"></i> Share on WhatsApp
+</button>
+	
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
@@ -368,4 +395,20 @@ window.addEventListener("click",(e)=>{
 })
 
 </script>
+	<script>
+document.getElementById('whatsapp-button').addEventListener('click', function() {
+    // Define the message and URL
+    const currentUrl = window.location.href;
+    const message = 'Check out this page:'+currentUrl;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Construct the WhatsApp share URL
+    const whatsappURL = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+    
+    // Open the WhatsApp URL in a new window/tab
+    window.open(whatsappURL, '_blank');
+});
+	</script>
 </html>
