@@ -406,7 +406,8 @@ document.getElementById('whatsapp-button').addEventListener('click', function() 
     
     // Construct the WhatsApp share URL
     const whatsappURL = `whatsapp://send?text=${encodedMessage}`;
-    
+
+    whatsappURL='whatsapp://send?text=This is WhatsApp sharing example using button';
     // Open the WhatsApp URL in a new window/tab
     window.open(whatsappURL, '_blank');
 });
